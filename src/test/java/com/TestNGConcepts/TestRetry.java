@@ -3,7 +3,7 @@ package com.TestNGConcepts;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.BasePackage.RetryAnalyzer;
+import com.Listeners.RetryAnalyzer;
 
 public class TestRetry 
 {

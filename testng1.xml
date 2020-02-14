@@ -3,7 +3,7 @@
 <suite name="RetryTestSuite">
 
 <listeners>
-	<listener class-name="Listeners.AnnotationTransfer"/>
+	<listener class-name="Listeners.AnnotationTransfer"></listener>
 </listeners>
 
   <test thread-count="5" name="RetryFailedCases">
