@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="RetryTestSuite">
+
+<listeners>
+	<listener class-name="com.BasePackage.AnnotationTransfer"/>
+</listeners>
+
+  <test thread-count="5" name="RetryFailedCases">
+    <classes>
+      <class name="com.TestNGConcepts.TestRetry"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

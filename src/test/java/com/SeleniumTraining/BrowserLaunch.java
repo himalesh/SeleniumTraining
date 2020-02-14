@@ -1,6 +1,6 @@
 package com.SeleniumTraining;
 
-import com.SeleniumTraining.BasePackage.BaseTest;
+import com.BasePackage.BaseTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 public class BrowserLaunch extends BaseTest 

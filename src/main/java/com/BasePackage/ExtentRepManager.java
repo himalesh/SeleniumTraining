@@ -1,4 +1,4 @@
-package com.SeleniumTraining.BasePackage;
+package com.BasePackage;
 
 
 import java.io.File;
