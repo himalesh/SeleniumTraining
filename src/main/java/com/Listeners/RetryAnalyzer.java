@@ -9,7 +9,7 @@ public class RetryAnalyzer implements IRetryAnalyzer
 {
 	public static final Logger log=Logger.getLogger(RetryAnalyzer.class.getName());
 	int counter=0;
-	int retryLimit=3;
+	int retryLimit=2;
 	
 	public boolean retry(ITestResult result) 
 	{

@@ -1,10 +1,17 @@
 package com.BasePackage;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -69,13 +76,40 @@ public class BaseTest
 	
 	public static void navigateUrl(String url)
 	{
-		driver.navigate().to("https://www.amazon.in");
+		if(url.equalsIgnoreCase("amazonurl"))
+		{
+			driver.navigate().to("https://www.amazon.in");
+		}else if(url.equalsIgnoreCase("googleurl"))
+		{
+			driver.navigate().to("https://www.google.in");
+		}
+		else
+		{
+			System.out.println("URL not found in list...");
+		}
+		
+		
 	}
 	
 	public static void closeBrowser() throws InterruptedException
 	{
 		Thread.sleep(1000);
 		driver.quit();
+	}
+	
+	public static void testFail()
+	{
+		Date dt=new Date();
+		SimpleDateFormat dtFormat=new SimpleDateFormat("dd-mm-yy hh-mm-ss");
+		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		String fileName = dt.toString().replace(":", "_").replace(" ", "_")+".jpeg";
+		try 
+		{
+			FileUtils.copyFile(srcFile, new File(projectPath+"/FailureScreens/"+fileName));
+		} catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
 	}
 
 	

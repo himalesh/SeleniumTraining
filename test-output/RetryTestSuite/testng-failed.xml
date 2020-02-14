@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [RetryTestSuite]">
+  <listeners>
+    <listener class-name="com.Listeners.AnnotationTransformer"/>
+  </listeners>
+  <test thread-count="5" name="RetryFailedCases(failed)">
+    <classes>
+      <class name="com.SeleniumTraining.ScreenShot">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+          <include name="TakeScreenShot"/>
+        </methods>
+      </class> <!-- com.SeleniumTraining.ScreenShot -->
+      <class name="com.TestNGConcepts.TestRetry">
+        <methods>
+          <include name="Test2"/>
+          <include name="Test1"/>
+        </methods>
+      </class> <!-- com.TestNGConcepts.TestRetry -->
+    </classes>
+  </test> <!-- RetryFailedCases(failed) -->
+</suite> <!-- Failed suite [RetryTestSuite] -->

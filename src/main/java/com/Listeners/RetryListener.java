@@ -1,37 +1,53 @@
 package com.Listeners;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.Date;
-
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.io.FileHandler;
+import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import org.testng.Reporter;
-
 import com.BasePackage.BaseTest;
 
 public class RetryListener extends BaseTest implements ITestListener 
 {
-	public void onTestFailure(ITestResult result)
+
+	public void onTestStart(ITestResult result) 
 	{
-		if(!result.isSuccess())
-		{
-			Date dt=new Date();
-			File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-			try 
-			{
-				FileHandler.copy(srcFile, new File(projectPath+"\\FailureScreens\\"+dt+".jpeg"));
-			} 
-			catch (IOException e) 
-			{			
-				e.printStackTrace();
-			}
-			Reporter.log("Test failed: "+result.getMethod().getMethodName());
-		}
+		// TODO Auto-generated method stub
 		
 	}
 
+	public void onTestSuccess(ITestResult result) 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void onTestFailure(ITestResult result) 
+	{
+		System.out.println("Test "+"'"+result.getMethod().getMethodName()+"'"+" failed...");
+		testFail();
+	}
+
+	public void onTestSkipped(ITestResult result) 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void onTestFailedButWithinSuccessPercentage(ITestResult result) 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void onStart(ITestContext context) 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void onFinish(ITestContext context) 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+	
 }

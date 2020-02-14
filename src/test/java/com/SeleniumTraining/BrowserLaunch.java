@@ -6,7 +6,7 @@ import com.relevantcodes.extentreports.LogStatus;
 public class BrowserLaunch extends BaseTest 
 {
 
-	public static void main(String[] args) throws Exception 
+	public static void main(String[] args) throws Exception
 	{
 		extest=report.startTest("BrowserLaunch");
 		initialize();
